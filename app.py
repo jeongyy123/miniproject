@@ -15,8 +15,16 @@ class User(db.Model):
     userEmail = db.Column(db.String(120), unique=True, nullable=False)
     userPw = db.Column(db.String(60), nullable=False)
 
-    def __repr__(self):
-        return f'{self.userId} {self.userPw}'
+class Board(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    ott = db.Column(db.String(200), nullable=False)
+    title = db.Column(db.String(200), nullable=False)
+    price = db.Column(db.String(100), nullable=False)
+    period = db.Column(db.String(100), nullable=False)
+    contents = db.Column(db.String(10000), nullable=False)
+
+#    def __repr__(self):
+#        return f'{self.userId} {self.userPw}'
 
 with app.app_context():
     db.create_all()
@@ -58,6 +66,34 @@ def movie_register_create ():
     db.session.commit()
 
     return render_template('login.html', userEmail=userEmail_receive )
+
+@app.route("/board/")
+def board():
+    board_list = Board.query.all()
+    return render_template('board_list.html', data=board_list)
+
+@app.route("/board/write/")
+def board_detail():
+    return render_template('board_write.html')
+
+@app.route("/board/view/<board_id>")
+def board_view(board_id):
+    board_detail = Board.query.filter_by(id=board_id).first()
+    print(board_detail.ott)
+    return render_template('board_view.html', data=board_detail)
+
+@app.route('/board/create/', methods=['POST'])
+def board_create():
+    ott_receive = request.form.get('ott_select')
+    title_receive = request.form.get("title")
+    price_receive = request.form.get("price_select")
+    period_receive = request.form.get("period_select")
+    contents_receive = request.form.get("contents")
+    
+    board = Board(ott=ott_receive, title=title_receive, price=price_receive, period=period_receive, contents=contents_receive)
+    db.session.add(board)
+    db.session.commit()
+    return redirect(url_for('board'))
 
 if __name__ == "__main__":
     app.run(debug=True)
