@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>004</title>
+    <style>
+      body {
+        font-family: "Nanum Pen Script", cursive;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(
+            45deg,
+            rgb(51 43 43 / 75%),
+            rgb(20 19 20 / 30%)
+          ),
+          url("https://blog.kakaocdn.net/dn/Q8LdP/btqDQtR1FXq/sKpRR7wfdYOb5PEJmIc9ek/img.jpg");
+        max-height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+      }
+      header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        height: 130px;
+      }
+      .left-section {
+        width: 80%;
+        font-size: 40px;
+        text-align: left;
+        padding-left: 80px;
+      }
+
+      .right-section {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        width: 10%;
+      }
+      .right-section img {
+        width: 140px;
+        height: 120px;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+        align-items: center;
+      }
+      .right-section img {
+        width: 140px;
+        height: 120px;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+        align-items: center;
+      }
+      .ott_box {
+        padding: 20px;
+        font-size: 30px;
+        align-items: center;
+      }
+      .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        border: 0px;
+        padding: 20px;
+        text-align: center;
+      }
+      .card img {
+        width: 300px;
+        height: 180px;
+        border-radius: 5px 5px 5px 5px;
+      }
+      button {
+        width: 300px;
+        background-color: black;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .left-cards {
+        display: flex;
+        flex-direction: row; /* Change to row to align horizontally */
+        align-items: center;
+        margin-left: auto; /* Push the right-cards to the right */
+      }
+      .right-cards {
+        display: flex;
+        flex-direction: row; /* Change to row to align horizontally */
+        align-items: center;
+        margin-left: auto; /* Push the right-cards to the right */
+      }
+      .ott_box p {
+        font-family: "Nanum Pen Script", cursive;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left-section">
+        <p>영화 OTT 공유 계정 파티원 구하기</p>
+      </div>
+      <div class="right-section">
+        <a href="">
+          <img src="./static/search_bar.png" alt="search_bar" />
+        </a>
+      </div>
+      <div class="right-section">
+        <a href="">
+          <img src="./static/login3.png" alt="Login Logo" />
+        </a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="ott_box">
+        <p>원하시는 OTT 플랫폼을 클릭하여 공유 계정 파티원을 구하세요!</p>
+        <div class="up">
+          <div class="left-cards">
+            <div class="card">
+              <a href="">
+                <img
+                  src="https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg"
+                  alt="Netflix Logo"
+                />
+              </a>
+              <a href="https://www.netflix.com/kr/" target="_blank">
+                <button>Netflix 이동</button>
+              </a>
+            </div>
+            <div class="card">
+              <a href="">
+                <img
+                  src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202305/11/68ae7ced-129b-4249-9722-20db093fa99e.jpg"
+                  alt="Disney+ Logo"
+                />
+              </a>
+              <a
+                href="https://www.disneyplus.com/ko-kr/restart-subscription"
+                target="_blank"
+              >
+                <button>Disney+ 이동</button>
+              </a>
+            </div>
+            <div class="card">
+              <a href="">
+                <img
+                  src="https://img.newspim.com/news/2023/01/19/2301191638498100_305_tc.jpg"
+                  alt="Tving Logo"
+                />
+              </a>
+              <a href="https://www.tving.com/onboarding" target="_blank">
+                <button>Tving 이동</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="right-cards">
+          <div class="card">
+            <a href="">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5fdcd66b0383b32fb0f59e0e/1618422438283-2K5DIKAXSFMUWGVPRNKX/logo.jpg"
+                alt="Watcha Logo"
+              />
+            </a>
+            <a href="https://watcha.com/browse/theater" target="_blank">
+              <button>Watcha 이동</button>
+            </a>
+          </div>
+          <div class="card">
+            <a href="">
+              <img
+                src="https://img.wavve.com/service30/profile/wavve2022.png"
+                alt="Wavve Logo"
+              />
+            </a>
+            <a href="https://www.wavve.com/" target="_blank">
+              <button>Wavve 이동</button>
+            </a>
+          </div>
+          <div class="card">
+            <a href="">
+              <img
+                src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/5kd/image/ac-QQ1P7r63H6vaYOLQrqrdSMjU.jpeg"
+                alt="Coupang play Logo"
+              />
+            </a>
+            <a href="https://www.coupangplay.com/" target="_blank">
+              <button>Coupang play 이동</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
