@@ -6,23 +6,13 @@
     <title>004</title>
     <style>
       body {
-        font-family: "Nanum Pen Script", cursive;
         color: #fff;
+        background-color: black;
         margin: 0;
         padding: 0;
-        background-image: linear-gradient(
-            45deg,
-            rgb(51 43 43 / 75%),
-            rgb(20 19 20 / 30%)
-          ),
-          url("https://blog.kakaocdn.net/dn/Q8LdP/btqDQtR1FXq/sKpRR7wfdYOb5PEJmIc9ek/img.jpg");
-        max-height: 100%;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
         text-align: center;
       }
+
       header {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         display: flex;
@@ -34,34 +24,22 @@
         text-align: center;
         height: 130px;
       }
+
       header img {
         width: 140px;
       }
+
       .left-section {
-        width: 80%;
+        width: 70%;
         font-size: 40px;
         text-align: left;
         padding-left: 80px;
       }
 
       .right-section {
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
-        width: 10%;
-      }
-      .right-section img {
-        width: 140px;
-        height: 120px;
-        margin: 0px;
-        border: 0px;
-        padding: 0px;
-        align-items: center;
-      }
-      .right-section img {
-        width: 140px;
-        height: 120px;
-        margin: 0px;
-        border: 0px;
-        padding: 0px;
+        width: 45%;
+        display: flex;
+        flex-direction: row;
         align-items: center;
       }
       .ott_box {
@@ -69,6 +47,7 @@
         font-size: 30px;
         align-items: center;
       }
+
       .card {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin: 20px;
@@ -76,39 +55,52 @@
         padding: 20px;
         text-align: center;
       }
+
       .card img {
         width: 300px;
         height: 180px;
         border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.9);
       }
+
       button {
         width: 300px;
-        background-color: black;
+        background-color: #333;
         color: #fff;
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
       }
+
       .left-cards {
         display: flex;
-        flex-direction: row; /* Change to row to align horizontally */
+        flex-direction: row;
+        /* Change to row to align horizontally */
         align-items: center;
-        margin-left: auto; /* Push the right-cards to the right */
+        margin-left: auto;
+        /* Push the right-cards to the right */
       }
+
       .right-cards {
         display: flex;
-        flex-direction: row; /* Change to row to align horizontally */
+        flex-direction: row;
+        /* Change to row to align horizontally */
         align-items: center;
-        margin-left: auto; /* Push the right-cards to the right */
+        margin-left: auto;
+        /* Push the right-cards to the right */
       }
-      .ott_box p {
-        font-family: "Nanum Pen Script", cursive;
+      .red-button {
+        width: 195px;
+        height: 50px;
+        margin-right: 10px;
+        background-color: brown;
+        color: #fff;
+        font-size: 20px;
       }
-      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
     </style>
   </head>
+
   <body>
     <header>
       <img
@@ -118,13 +110,17 @@
         <p>영화 OTT 공유 계정 파티원 구하기</p>
       </div>
       <div class="right-section">
-        <a href="">
-          <img src="./static/search_bar.png" alt="search_bar" />
+        <a href="{{ url_for('login')}}">
+          <button type="button" class="red-button">로그인</button>
         </a>
-      </div>
-      <div class="right-section">
-        <a href="">
-          <img src="./static/login3.png" alt="Login Logo" />
+        <a href="{{ url_for('movie_search')}}">
+          <button type="button" class="red-button">박스오피스 순위</button>
+        </a>
+        <a href="{{ url_for('board')}}">
+          <button type="button" class="red-button">게시판</button>
+        </a>
+        <a href="{{ url_for('Recommended')}}">
+          <button type="button" class="red-button">영화 리뷰 남기기</button>
         </a>
       </div>
     </header>
