@@ -82,6 +82,13 @@ def board_view(board_id):
     print(board_detail.ott)
     return render_template('board_view.html', data=board_detail)
 
+@app.route('/board/delete/<board_id>')
+def board_delete(board_id):
+    delete_data = Board.query.filter_by(id=board_id).first()
+    db.session.delete(delete_data)
+    db.session.commit()
+    return redirect(url_for('board'))
+
 @app.route('/board/create/', methods=['POST'])
 def board_create():
     ott_receive = request.form.get('ott_select')
